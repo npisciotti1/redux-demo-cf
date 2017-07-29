@@ -11,6 +11,7 @@ let reducer = (state=initialState, action) {
       return state.map(category =>
         category.id == payload.id ? payload : category)
     case 'CATEGORY_DELETE':
+      return state.filter(category => category.id !== payload.id)
     default:
       return state;
   }

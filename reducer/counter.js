@@ -15,9 +15,9 @@ export default (state = initialState, action) => {
 
   switch(type) {
     case 'INC':
-      return state + 1;
+      return state + (payload ? payload : 1);
     case 'DEC':
-      return state - 1;
+      return state - (payload ? payload : 1);
     default:
       return state;
   }

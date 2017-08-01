@@ -1,0 +1,12 @@
+{
+  "name": "redux-demo-cf",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/npisciotti1/redux-demo-cf.git",
+  "author": "Nikko Pisciotti <nikko@bluelacesmusic.com>",
+  "license": "MIT",
+  "dependencies": {
+    "jest": "^20.0.4",
+    "redux": "^3.7.2"
+  }
+}

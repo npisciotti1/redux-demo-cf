@@ -4,6 +4,21 @@
   "main": "index.js",
   "repository": "https://github.com/npisciotti1/redux-demo-cf.git",
   "author": "Nikko Pisciotti <nikko@bluelacesmusic.com>",
+  "jest": {
+    "globals": {
+      "__DEBUG__": false,
+      "process.env": {
+        "NODE_ENV": "testing"
+      }
+    }
+  },
+  "scripts": {
+    "test": "jest --coverage",
+    "test-watch": "jest --watchAll",
+    "lint": "eslint .",
+    "build": "webpack",
+    "watch": "webpack-dev-server --inline --hot"
+  },
   "license": "MIT",
   "dependencies": {
     "babel-core": "^6.25.0",

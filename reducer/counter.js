@@ -10,7 +10,7 @@
 
 var initialState = 0;
 
-export default (state = initialState, action) => {
+export default (state=initialState, action) => {
   let {type, payload} = action;
 
   switch(type) {

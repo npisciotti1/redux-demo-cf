@@ -1,7 +1,3 @@
-import {createStore} from 'redux';
-
-import categoryReducer from '../reducer/category.js'
-
-const store = createStore(categoryReducer)
-
-console.log('store', store);
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './component/app';

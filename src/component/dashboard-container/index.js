@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import {categoryCreate, categoryUpdate, categoryDelete} from '../../action/category-actions.js';
 
 import CategoryForm from '../category-form';
-import CategoryItem from '../category-render';
+import CategoryItem from '../CategoryItem';
 
 class DashboardContainer extends React.Component {
 

@@ -2,7 +2,7 @@
 
 let initialState = []
 
-let reducer = (state=initialState, action) {
+let reducer = (state=initialState, action) => {
   let {type, payload} = action;
   switch(type) {
     case 'CATEGORY_CREATE':

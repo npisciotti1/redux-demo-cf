@@ -23,6 +23,7 @@ class App extends React.component {
             <Route exact path='/' component={DashboardContainer} />
           </BrowserRouter>
         </Provider>
+        <h1>hello world!</h1>
       </div>
     )
   }

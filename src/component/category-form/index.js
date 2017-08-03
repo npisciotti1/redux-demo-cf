@@ -4,7 +4,7 @@ class CategoryForm extends React.Component {
   constructor(props){
     super(props)
 
-    this.state = props.category ? {...props.category} : {title:;}
+    this.state = props.category ? {...props.category} : {title:''}
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -55,4 +55,4 @@ class CategoryForm extends React.Component {
   }
 }
 
-export defaut CategoryForm;
+export default CategoryForm;

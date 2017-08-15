@@ -6,7 +6,7 @@ import DashboardContainer from '../dashboard-container';
 
 const store = createAppStore();
 
-class App extends React.component {
+class App extends React.Component {
   componentDidMount(){
     store.subscribe( () => {
       console.log('__STATE__', store.getState())
@@ -23,7 +23,6 @@ class App extends React.component {
             <Route exact path='/' component={DashboardContainer} />
           </BrowserRouter>
         </Provider>
-        <h1>hello world!</h1>
       </div>
     )
   }

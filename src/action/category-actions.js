@@ -3,6 +3,8 @@
 //you should only use action-creators in your app.
 //you should NEVER hard-code action-literals in your app.
 
+import uuid from 'uuid';
+
 export const categoryCreate = (category) => {
   category.id = uuid();
   category.timestamp = new Date();

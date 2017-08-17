@@ -12,6 +12,7 @@ class App extends React.Component {
       console.log('__STATE__', store.getState())
     });
 
+    //to test our subscribe
     store.dispatch({type: null})
   }
 

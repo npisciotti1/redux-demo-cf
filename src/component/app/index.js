@@ -1,6 +1,6 @@
 import React from 'react';
 import {Provider} from 'react-redux';
-import {BrowserRouter, Router} from 'react-router-dom';
+import {BrowserRouter, Route} from 'react-router-dom';
 import createAppStore from '../../lib/store.js';
 import DashboardContainer from '../dashboard-container';
 

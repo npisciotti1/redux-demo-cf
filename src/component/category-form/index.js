@@ -30,7 +30,9 @@ class CategoryForm extends React.Component{
           />
 
         <button type="submit"> {this.props.buttonText} </button>
-      </form>  
+      </form>
     )
   }
 }
+
+export default CategoryForm;

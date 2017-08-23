@@ -5,6 +5,8 @@ import {
   categoryDelete
 } from '../../action/category-actions';
 
+import CategoryForm from '../category-form';
+
 
 class CategoryItem extends React.Component{
   render(){
@@ -16,6 +18,11 @@ class CategoryItem extends React.Component{
           <button onClick={() => categoryDelete(category)}> delete </button>
         </div>
         <div className="editing">
+          <CategoryForm
+            category="category"
+            buttonText="update"
+            onComplete={categoryUpdate}
+            />
         </div>
       </div>
     )

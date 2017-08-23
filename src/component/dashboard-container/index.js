@@ -21,6 +21,11 @@ class DashboardContainer extends React.Component {
           buttonText="create category"
           onComplete={this.props.categoryCreate}
           />
+        {this.props.categories.map( item =>
+          <div key={item.id}>
+            <h3>{item.title}</h3>
+          </div>
+        )}
       </main>
     )
   }

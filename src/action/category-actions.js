@@ -20,7 +20,7 @@ export const categoryUpdate = (category) => ({
 });
 
 export const categoryDelete = (category) => ({
-  type: 'CATEGORY_UPDATE',
+  type: 'CATEGORY_DELETE',
   payload: category
 });
 

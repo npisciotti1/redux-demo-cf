@@ -1,17 +1,13 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {
-  categoryCreate,
-  categoryUpdate,
-  categoryDelete
-} from '../../action/category-actions';
+import {categoryActionCreate} from '../../action/category-actions';
 
 import CategoryForm from '../category-form'
 
 
 class DashboardContainer extends React.Component {
   componentDidMount() {
-    this.props.categoryCreate({title: 'yo it worked'})
+    this.props.categoryActionCreate({title: 'yo it worked'})
   }
   render(){
     return(
@@ -19,7 +15,7 @@ class DashboardContainer extends React.Component {
         <h2> dashboard </h2>
         <CategoryForm
           buttonText="create category"
-          onComplete={this.props.categoryCreate}
+          onComplete={this.props.categoryActionCreate}
           />
         {this.props.categories.map( item =>
           <div key={item.id}>
@@ -39,9 +35,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch, getState) => {
   return {
-    categoryCreate: (category) => dispatch(categoryCreate(category)),
-    categoryUpdate: (category) => dispatch(categoryUpdate(category)),
-    categoryDelete: (category) => dispatch(categoryDelete(category))
+    categoryCreate: (category) => dispatch(categoryCreate(category))
   }
 }
 

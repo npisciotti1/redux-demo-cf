@@ -6,6 +6,8 @@ import {
   categoryDelete
 } from '../../action/category-actions';
 
+import CategoryForm from '../category-form'
+
 
 class DashboardContainer extends React.Component {
   componentDidMount() {
@@ -15,6 +17,10 @@ class DashboardContainer extends React.Component {
     return(
       <main className="dashboard-container">
         <h2> dashboard </h2>
+        <CategoryForm
+          buttonText="create category"
+          onComplete={this.props.categoryCreate}
+          />
       </main>
     )
   }

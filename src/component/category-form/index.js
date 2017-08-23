@@ -1,10 +1,10 @@
-import 'React' from 'react';
+import React from 'react';
 
 class CategoryForm extends React.Component{
   constructor(props) {
     super(props)
     this.state = {
-      title: this.props.category ? this.props.category.title : '';
+      title: this.props.category ? this.props.category.title : ''
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -25,7 +25,7 @@ class CategoryForm extends React.Component{
         <input
           name="title"
           placeholder="title"
-          value={this.state.input}
+          value={this.state.title}
           onChange={this.handleChange}
           />
 

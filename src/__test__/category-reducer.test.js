@@ -7,8 +7,12 @@ describe('testing category reducer', () => {
   });
 
   test('created object should update state', () => {
-    let newItem = {title: 'test'};
-    let result = categoryReducer(undefined, {type: 'CATEGORY_CREATE', payload: newItem})
-    expect(result).toEqual()
+    let action = {
+      type: 'CATEGORY_CREATE',
+      payload: 'test'
+    }
+    let result = categoryReducer(undefined, action)
+    expect(result.length).toBe(1);
+    expect(result[0]).toBe(action.payload);
   })
 })

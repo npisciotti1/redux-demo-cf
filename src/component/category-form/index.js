@@ -22,8 +22,6 @@ class CategoryForm extends React.Component{
     e.preventDefault();
     this.props.onComplete(Object.assign({}, this.state));
 
-    console.log('this.props', this.props)
-
     if(!this.props.category)
       this.setState({title: ''})
   }

@@ -11,8 +11,12 @@ describe('testing category reducer', () => {
       type: 'CATEGORY_CREATE',
       payload: 'test'
     }
-    let result = categoryReducer(undefined, action)
-    expect(result.length).toBe(1);
-    expect(result[0]).toBe(action.payload);
+    let state = categoryReducer(undefined, action)
+    expect(state.length).toBe(1);
+    expect(state[0]).toBe(action.payload);
+
+    state = categoryReducer(state, action)
+    expect(state.length).toBe(2);
+
   })
 })

@@ -7,19 +7,17 @@ import CategoryItem from '../category-item'
 
 
 class DashboardContainer extends React.Component {
-  componentDidMount() {
-    this.props.categoryCreate({title: 'yo it worked'})
-  }
   render(){
-    return(
-      <main className="dashboard-container">
+    return (
+      <main className='dashboard-container'>
         <h2> dashboard </h2>
         <CategoryForm
-          buttonText="create category"
+          buttonText='create category'
           onComplete={this.props.categoryCreate}
           />
-        {this.props.categories.map( item =>
-          <CategoryItem category={item} />
+
+        {this.props.categories.map((item) =>
+          <CategoryItem key={item.id} category={item} />
         )}
       </main>
     )

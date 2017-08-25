@@ -1,11 +1,12 @@
 import React from 'react';
 import {connect} from 'react-redux';
+
+import CategoryForm from '../category-form';
+
 import {
   categoryUpdate,
   categoryDelete
 } from '../../action/category-actions';
-
-import CategoryForm from '../category-form';
 
 
 class CategoryItem extends React.Component{
@@ -19,7 +20,7 @@ class CategoryItem extends React.Component{
         </div>
         <div className="editing">
           <CategoryForm
-            category="category"
+            category={category}
             buttonText="update"
             onComplete={categoryUpdate}
             />

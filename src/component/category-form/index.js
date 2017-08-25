@@ -4,9 +4,14 @@ class CategoryForm extends React.Component{
   constructor(props) {
     super(props)
     this.state = props.category ? {...props.category} : {title: ''};
-    
+
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentWillReceiveProps(props){
+    if(props.category)
+      this.setState(props.category)
   }
 
   handleChange(e) {
@@ -16,6 +21,11 @@ class CategoryForm extends React.Component{
   handleSubmit(e) {
     e.preventDefault();
     this.props.onComplete(Object.assign({}, this.state));
+
+    console.log('this.props', this.props)
+
+    if(!this.props.category)
+      this.setState({title: ''})
   }
 
   render() {

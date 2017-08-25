@@ -6,22 +6,22 @@
 import uuid from 'uuid';
 
 export const categoryCreate = (category) => {
-  category.id = uuid();
-  category.timestamp = new Date();
+  category.id = uuid()
+  category.timestamp = new Date()
   return {
     type: 'CATEGORY_CREATE',
-    payload: category
+    payload: category,
   }
 }
 
 export const categoryUpdate = (category) => ({
   type: 'CATEGORY_UPDATE',
-  payload: category
-});
+  payload: category,
+})
 
 export const categoryDelete = (category) => ({
   type: 'CATEGORY_DELETE',
-  payload: category
-});
+  payload: category,
+})
 
 export const categoryReset = () => ({type: 'CATEGORY_RESET'})

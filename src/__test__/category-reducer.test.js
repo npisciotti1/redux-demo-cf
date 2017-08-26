@@ -35,5 +35,10 @@ describe('testing category reducer', () => {
     expect(updated.category).toBe('im updated')
   })
 
-  
+  test('CATEGORY_DELETE should delete an item in state', () => {
+    let action = {
+      type: 'CATEGORY_DELETE',
+      payload: {category: 'test', id: 1}
+    }
+    
 })

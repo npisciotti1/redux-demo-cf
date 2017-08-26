@@ -46,4 +46,12 @@ describe('testing category reducer', () => {
     expect(state.length).toBe(1);
     expect(state[0]).toEqual({category: 'thing', id: 2})
   })
+
+  test('CATEGORY_RESET should return a resetted state --> []', () => {
+    let action = {
+      type: 'CATEGORY_RESET',
+      payload: {}
+    }
+    let state = [{category: 'test', id: 1}, {category: 'thing', id: 2}];
+  })
 })

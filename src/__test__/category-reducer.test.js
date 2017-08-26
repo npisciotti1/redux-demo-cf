@@ -40,5 +40,10 @@ describe('testing category reducer', () => {
       type: 'CATEGORY_DELETE',
       payload: {category: 'test', id: 1}
     }
-    
+    let state = [{category: 'test', id: 1}, {category: 'thing', id: 2}];
+
+    state = categoryReducer(state, action)
+    expect(state.length).toBe(1);
+    expect(state[0]).toEqual({category: 'thing', id: 2})
+  })
 })

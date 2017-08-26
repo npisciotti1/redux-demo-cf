@@ -53,5 +53,10 @@ describe('testing category reducer', () => {
       payload: {}
     }
     let state = [{category: 'test', id: 1}, {category: 'thing', id: 2}];
+
+    state = categoryReducer(state, action);
+
+    expect(state.length).toBe(0);
+    expect(state).toEqual([]);
   })
 })

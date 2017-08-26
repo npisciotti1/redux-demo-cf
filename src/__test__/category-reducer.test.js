@@ -6,7 +6,7 @@ describe('testing category reducer', () => {
     expect(result).toEqual([]);
   });
 
-  test('created object should update state', () => {
+  test('CATEGORY_CREATE should add an item and update the state', () => {
     let action = {
       type: 'CATEGORY_CREATE',
       payload: 'test'
@@ -19,4 +19,21 @@ describe('testing category reducer', () => {
     expect(state.length).toBe(2);
 
   })
+
+  test('CATEGORY_UPDATE should update an item and return the updated state', () => {
+    let action = {
+      type: 'CATEGORY_UPDATE',
+      payload: {category: 'im updated', id: 2}
+    }
+
+    let state = [{category: 'test', id: 1}, {category: 'thing', id: 2}];
+
+    state = categoryReducer(state, action);
+    expect(state[1]).toBe(action.payload);
+
+    let updated = state[1];
+    expect(updated.category).toBe('im updated')
+  })
+
+  
 })

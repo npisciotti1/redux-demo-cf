@@ -18,6 +18,14 @@ describe('testing category reducer', () => {
     state = categoryReducer(state, action)
     expect(state.length).toBe(2);
 
+    let action2 = {
+      type: 'CATEGORY_CREATE',
+      payload: 'thing'
+    }
+
+    state = categoryReducer(state, action2);
+    expect(state.length).toBe(3);
+    expect(state[2]).toBe(action2.payload)
   })
 
   test('CATEGORY_UPDATE should update an item and return the updated state', () => {

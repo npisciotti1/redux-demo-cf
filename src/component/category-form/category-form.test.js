@@ -16,7 +16,7 @@ describe('testing CategoryForm', () => {
         buttonText='cool'
         />
       )
-      
+
     let mockState = {title: 'test'};
     wrapper.setState(mockState);
 
@@ -25,5 +25,19 @@ describe('testing CategoryForm', () => {
     let {calls} = mockHandleOnComplete.mock;
     expect(calls.length).toBe(1);
     expect(calls[0][0]).toEqual(mockState);
+  })
+
+  test('testing onChange prop, should update the title on the state', () => {
+    let wrapper = mount(
+      <CategoryForm onComplete={() => {}} buttonText='submit' />
+    )
+
+    wrapper.find('input').simulate('change', {
+      target: {
+        value: 'updated'
+      }
+    });
+
+    expect(wrapper.state('title')).toEqual('updated')
   })
 })

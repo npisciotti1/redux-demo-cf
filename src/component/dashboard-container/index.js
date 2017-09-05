@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {categoryCreate} from '../../action/category-actions';
+import {categoryCreate as categoryActionCreate} from '../../action/category-actions';
 
 import CategoryForm from '../category-form'
 import CategoryItem from '../category-item'
@@ -32,7 +32,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch, getState) => {
   return {
-    categoryCreate: (category) => dispatch(categoryCreate(category))
+    categoryCreate: (category) => dispatch(categoryActionCreate(category))
   }
 }
 

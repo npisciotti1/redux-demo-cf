@@ -4,8 +4,8 @@ import {connect} from 'react-redux';
 import CategoryForm from '../category-form';
 
 import {
-  categoryUpdate,
-  categoryDelete
+  categoryUpdate as categoryActionUpdate,
+  categoryDelete as categoryActionDelete
 } from '../../action/category-actions';
 
 
@@ -34,8 +34,8 @@ class CategoryItem extends React.Component{
 let mapStateToProps = () => ({})
 
 let mapDispatchToProps = dispatch => ({
-  categoryUpdate: (category) => dispatch(categoryUpdate(category)),
-  categoryDelete: (category) => dispatch(categoryDelete(category))
+  categoryUpdate: (category) => dispatch(categoryActionUpdate(category)),
+  categoryDelete: (category) => dispatch(categoryActionDelete(category))
 })
 
 

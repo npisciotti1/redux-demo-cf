@@ -9,8 +9,8 @@ export default (state=initialState, action) => {
     case('CATEGORY_DELETE'):
       return {...state: [payload.id]: undefined}
     case('CARD_CREATE'):
-        let categoryID = payload;
-        let categoryCards = [...state[categoryID]]
+        let {categoryID} = payload;
+        let categoryCards = state[categoryID]
         return {...state, [categoryID]: [...categoryCards, payload]}
 
     default:

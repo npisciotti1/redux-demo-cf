@@ -1,6 +1,8 @@
 let intialState = {}
+
 export default (state=intialState, action) => {
   let {type, payload} = action
+  
   switch(type){
     case 'CATEGORY_CREATE':
       return {...state, [payload.id]: []}
@@ -12,7 +14,6 @@ export default (state=intialState, action) => {
       let {categoryID} = payload
       let categoryCards = state[categoryID]
       return {...state, [categoryID]: [...categoryCards, payload]}
-
 
     default:
       return state;

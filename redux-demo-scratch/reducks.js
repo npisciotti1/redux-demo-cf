@@ -17,6 +17,7 @@ function createStore(reducer) {
     dispatch: function(action) {
       state = reducer(state, action)
       subscribers.forEach(function(cb){ cb() })
+      return action;
     },
     subscribe: function(cb) {
       subscribers.push(cb)

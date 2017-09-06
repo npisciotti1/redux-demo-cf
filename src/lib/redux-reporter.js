@@ -7,7 +7,7 @@ let reporter = store => next => action => {
     return result;
 
   } catch(error) {
-    error.action = error;
+    error.action = action;
     console.error('__ERROR__', error);
     return error;
   }

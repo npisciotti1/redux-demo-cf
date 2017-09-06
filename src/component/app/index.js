@@ -7,7 +7,6 @@ import DashboardContainer from '../dashboard-container';
 const store = createAppStore();
 
 class App extends React.Component {
-
   render() {
     return(
       <div>

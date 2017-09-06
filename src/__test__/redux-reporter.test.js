@@ -30,4 +30,15 @@ describe('redux reporter', () => {
     expect(result).toEqual(action);
     expect(mockStore.getState()).toEqual(1)
   })
+
+  test('dispatch should handle an error action without crashing', () => {
+    let mockStore = mockStoreCreate();
+    let action = {type: 'ERROR'}
+    let result = mockStore.dispatch(action);
+
+    expect(result).toBeInstanceOf(Error);
+    // expect(result.action).toEqual(action);
+    expect(result.message).toEqual('test error')
+    expect(mockStore.getState()).toEqual(0);
+  })
 })

@@ -2,6 +2,9 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import CategoryForm from '../category-form';
+import CardForm from '../card-form';
+
+import {cardCreate} from '../../action/card-actions';
 
 import {
   categoryUpdate as categoryActionUpdate,
@@ -35,7 +38,8 @@ let mapStateToProps = () => ({})
 
 let mapDispatchToProps = dispatch => ({
   categoryUpdate: (category) => dispatch(categoryActionUpdate(category)),
-  categoryDelete: (category) => dispatch(categoryActionDelete(category))
+  categoryDelete: (category) => dispatch(categoryActionDelete(category)),
+  cardCreate: (card) =>  dispatch(cardCreate(card))
 })
 
 

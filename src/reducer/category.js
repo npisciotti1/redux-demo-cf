@@ -1,5 +1,5 @@
-let validatePayload = (payload) => {
-  if(!payload.id || !payload.title || !payload.timestamp) {
+let validateCategory = (category) => {
+  if(!category.id || !category.title || !category.timestamp) {
     throw new Error('VALIDATION ERROR: category must have id, title and timestamp')
   }
 }
@@ -10,11 +10,11 @@ export default (state=intialState, action) => {
   let {type, payload} = action
   switch(type){
     case 'CATEGORY_CREATE':
-      validatePayload(payload);
+      validateCategory(payload);
       return [...state, payload]
 
     case 'CATEGORY_UPDATE':
-      validatePayload(payload);
+      validateCategory(payload);
       return state.map(category =>
         category.id == payload.id ? payload : category)
 

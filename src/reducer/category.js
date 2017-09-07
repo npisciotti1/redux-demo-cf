@@ -19,6 +19,7 @@ export default (state=intialState, action) => {
         category.id == payload.id ? payload : category)
 
     case 'CATEGORY_DELETE':
+      validateCategory(payload);
       return state.filter(category => category.id !== payload.id)
 
     case 'CATEGORY_RESET':

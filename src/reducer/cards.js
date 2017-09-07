@@ -17,16 +17,32 @@ export default (state=intialState, action) => {
   switch(type){
     case 'CATEGORY_CREATE':
       validateCategory(payload);
-      return {...state, [payload.id]: []}
+      return {...state, [payload.id]: []};
 
     case 'CATEGORY_DELETE':
       return {...state, [payload.id]: undefined}
 
     case 'CARD_CREATE':
       validateCard(payload);
-      let {categoryID} = payload
-      let categoryCards = state[categoryID]
+      let {categoryID} = payload;
+      let categoryCards = state[categoryID];
       return {...state, [categoryID]: [...categoryCards, payload]}
+
+    case 'CARD_UPDATE':
+      validateCard(payload);
+      let {categoryID} = payload;
+      let categoryCards = state[categoryID];
+      return {...state, [categoryID]: categoryCards.map( card => {
+        card.id === payload.id ? payload : card;
+      })}
+
+    case 'CARD_DELETE':
+      validateCard(payload);
+      let {categoryID} = payload;
+      let categoryCards = state[categoryID];
+      return {...state, [categoryID]: categoryCards.filter( card =>
+        card.id !== payload.id;
+      )}
 
     default:
       return state;

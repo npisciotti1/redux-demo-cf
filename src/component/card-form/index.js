@@ -11,6 +11,7 @@ class CardForm extends React.Component {
 
   componentWillReceiveProps(props) {
     if(props.card) this.setState({...props.card})
+    if(props.categoryID) this.setState({categoryID: props.categoryID})
   }
 
   handleChange(e){
@@ -37,3 +38,5 @@ class CardForm extends React.Component {
     )
   }
 }
+
+export default CardForm;

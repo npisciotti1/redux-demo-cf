@@ -25,13 +25,13 @@ export default (state=intialState, action) => {
     case 'CARD_CREATE':
       validateCard(payload);
       var {categoryID} = payload;
-      let categoryCards = state[categoryID];
+      var categoryCards = state[categoryID];
       return {...state, [categoryID]: [...categoryCards, payload]}
 
     case 'CARD_UPDATE':
       validateCard(payload);
       var {categoryID} = payload;
-      let categoryCards = state[categoryID];
+      var categoryCards = state[categoryID];
       return {...state, [categoryID]: categoryCards.map( card => {
         card.id === payload.id ? payload : card;
       })}
@@ -39,10 +39,10 @@ export default (state=intialState, action) => {
     case 'CARD_DELETE':
       validateCard(payload);
       var {categoryID} = payload;
-      let categoryCards = state[categoryID];
-      return {...state, [categoryID]: categoryCards.filter( card =>
-        card.id !== payload.id;
-      )}
+      var categoryCards = state[categoryID];
+      return {...state, [categoryID]: categoryCards.filter( card => {
+        card.id !== payload.id
+      })}
 
     default:
       return state;

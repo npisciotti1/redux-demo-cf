@@ -3,6 +3,12 @@ let validateCard = (card) => {
     throw new Error('VALIDATION ERROR: card should have an id, content and categoryID')
 }
 
+let validateCategory = (category) => {
+  if(!category.id || !category.title || !category.timestamp) {
+    throw new Error('VALIDATION ERROR: category must have id, title and timestamp')
+  }
+}
+
 let intialState = {}
 
 export default (state=intialState, action) => {

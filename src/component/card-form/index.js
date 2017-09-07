@@ -24,7 +24,16 @@ class CardForm extends React.Component {
 
   render(){
     return (
-      <form className="card-form" onSubmit={this.handleSubmit}
+      <form className="card-form" onSubmit={this.handleSubmit}>
+        <input
+          type="text"
+          placeholder="title"
+          name="title"
+          value={this.state.title}
+          onChange={this.handleChange}
+          />
+        <button type="submit"> "Add Card" </button>
+      </form>
     )
   }
 }

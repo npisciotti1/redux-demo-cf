@@ -4,6 +4,9 @@ class CardForm extends React.Component {
   constructor(props){
     super(props)
     this.state = props.card ? {...props.card} : {title: '', categoryID: props.categoryID}
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentWillReceiveProps(props) {
@@ -16,10 +19,12 @@ class CardForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    
+    this.props.onComplete(this.state);
   }
 
   render(){
-
+    return (
+      <form className="card-form" onSubmit={this.handleSubmit}
+    )
   }
 }

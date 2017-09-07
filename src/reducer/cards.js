@@ -16,12 +16,14 @@ export default (state=intialState, action) => {
 
   switch(type){
     case 'CATEGORY_CREATE':
+      validateCategory(payload);
       return {...state, [payload.id]: []}
 
     case 'CATEGORY_DELETE':
       return {...state, [payload.id]: undefined}
 
     case 'CARD_CREATE':
+      validateCard(payload);
       let {categoryID} = payload
       let categoryCards = state[categoryID]
       return {...state, [categoryID]: [...categoryCards, payload]}

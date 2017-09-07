@@ -24,13 +24,13 @@ export default (state=intialState, action) => {
 
     case 'CARD_CREATE':
       validateCard(payload);
-      let {categoryID} = payload;
+      var {categoryID} = payload;
       let categoryCards = state[categoryID];
       return {...state, [categoryID]: [...categoryCards, payload]}
 
     case 'CARD_UPDATE':
       validateCard(payload);
-      let {categoryID} = payload;
+      var {categoryID} = payload;
       let categoryCards = state[categoryID];
       return {...state, [categoryID]: categoryCards.map( card => {
         card.id === payload.id ? payload : card;
@@ -38,7 +38,7 @@ export default (state=intialState, action) => {
 
     case 'CARD_DELETE':
       validateCard(payload);
-      let {categoryID} = payload;
+      var {categoryID} = payload;
       let categoryCards = state[categoryID];
       return {...state, [categoryID]: categoryCards.filter( card =>
         card.id !== payload.id;

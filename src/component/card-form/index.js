@@ -21,6 +21,9 @@ class CardForm extends React.Component {
   handleSubmit(e){
     e.preventDefault();
     this.props.onComplete(this.state);
+    if(!this.props.card) {
+      this.setState({content: ''})
+    }
   }
 
   render(){

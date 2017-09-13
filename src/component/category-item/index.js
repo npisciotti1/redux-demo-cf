@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 
 import CategoryForm from '../category-form';
 import CardForm from '../card-form';
+import CardItem from '../card-item';
 
 import {cardCreate} from '../../action/card-actions';
 
@@ -35,11 +36,7 @@ class CategoryItem extends React.Component{
             onComplete={this.props.cardCreate}
             />
           <ul>
-            {cards.map(card => 
-              <li key={card.id}>
-                <p>{card.content}</p>
-              </li>
-            )}
+            {cards.map(card => <CardItem )}
           </ul>
         </main>
       </div>

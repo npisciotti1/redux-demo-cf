@@ -3,7 +3,7 @@ import React from 'react';
 class CardForm extends React.Component {
   constructor(props){
     super(props)
-    this.state = props.card ? {...props.card} : {title: '', categoryID: props.categoryID}
+    this.state = props.card ? {...props.card} : {content: '', categoryID: props.categoryID}
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -15,7 +15,7 @@ class CardForm extends React.Component {
   }
 
   handleChange(e){
-    this.setState({title: e.target.value})
+    this.setState({content: e.target.value})
   }
 
   handleSubmit(e){

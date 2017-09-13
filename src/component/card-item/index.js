@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-category CardItem extends React.Component{
+class CardItem extends React.Component{
   render() {
     let {card} = this.props;
     return(

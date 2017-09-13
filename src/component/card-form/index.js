@@ -32,8 +32,8 @@ class CardForm extends React.Component {
         <input
           type="text"
           placeholder="title"
-          name="title"
-          value={this.state.title}
+          name="content"
+          value={this.state.content}
           onChange={this.handleChange}
           />
         <button type="submit"> {this.props.buttonText} </button>

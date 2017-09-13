@@ -14,7 +14,7 @@ import {
 
 class CategoryItem extends React.Component{
   render(){
-    let {category, categoryUpdate, categoryDelete} = this.props;
+    let {category, categoryUpdate, categoryDelete, cards} = this.props;
     return(
       <div className="category-item">
         <div className="content">
@@ -35,7 +35,11 @@ class CategoryItem extends React.Component{
             onComplete={this.props.cardCreate}
             />
           <ul>
-            cards should go here
+            {cards.map(card => 
+              <li key={card.id}>
+                <p>{card.content}</p>
+              </li>
+            )}
           </ul>
         </main>
       </div>

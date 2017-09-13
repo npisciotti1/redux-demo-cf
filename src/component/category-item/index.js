@@ -28,6 +28,16 @@ class CategoryItem extends React.Component{
             onComplete={categoryUpdate}
             />
         </div>
+        <main>
+          <CardForm
+            categoryID={category.id}
+            buttonText='create card'
+            onComplete={this.props.cardCreate}
+            />
+          <ul>
+            cards should go here
+          </ul>
+        </main>
       </div>
     )
 

@@ -21,9 +21,9 @@ class CategoryForm extends React.Component{
   handleSubmit(e) {
     e.preventDefault();
     this.props.onComplete({...this.state});
-
-    if(!this.props.category)
+    if(!this.props.category) {
       this.setState({title: ''})
+    }
   }
 
   render() {

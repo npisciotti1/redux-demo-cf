@@ -44,7 +44,10 @@ class CategoryItem extends React.Component{
   }
 }
 
-let mapStateToProps = () => ({})
+//state here is the state of the store, not the component
+let mapStateToProps = (state, props) => ({
+  cards: state.cards[props.category.id]
+})
 
 let mapDispatchToProps = dispatch => ({
   categoryUpdate: (category) => dispatch(categoryActionUpdate(category)),

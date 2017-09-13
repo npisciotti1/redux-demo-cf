@@ -36,7 +36,7 @@ class CategoryItem extends React.Component{
             onComplete={this.props.cardCreate}
             />
           <ul>
-            {cards.map(card => <CardItem )}
+            {cards.map(card => <CardItem key={card.id} card={card} /> )}
           </ul>
         </main>
       </div>

@@ -14,4 +14,11 @@ class CardItem extends React.Component{
   }
 }
 
+let mapStateToProps = () => ({});
+
+let mapDispatchToProps = (dispatch) => {
+  cardUpdate: (card) => dispatch(cardUpdate(card)),
+  cardDelete: (card) => dispatch(cardDelete(card))
+}
+
 export default CardItem;

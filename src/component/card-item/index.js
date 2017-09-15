@@ -10,14 +10,14 @@ import {
 
 class CardItem extends React.Component{
   render() {
-    let {card, cardDelete} = this.props;
+    let {card, cardDelete, cardUpdate} = this.props;
     return(
       <li className='card-item'>
         <p> {card.content} </p>
         <button onClick={ () => cardDelete(card)}> Delete </button>
         <CardForm
           card={card}
-          buttonText="update card",
+          buttonText="update card"
           onComplete={cardUpdate}
          />
       </li>
@@ -32,4 +32,4 @@ let mapDispatchToProps = (dispatch) => ({
   cardDelete: (card) => dispatch(cardActionDelete(card))
 })
 
-export default CardItem;
+export default connect(mapStateToProps, mapDispatchToProps)(CardItem);

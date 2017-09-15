@@ -1,7 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import {cardUpdate, cardDelete} from '../../action/card-actions';
+import {
+  cardUpdate as cardActionUpdate,
+  cardDelete as cardActionDelete
+} from '../../action/card-actions';
 
 class CardItem extends React.Component{
   render() {
@@ -18,8 +21,8 @@ class CardItem extends React.Component{
 let mapStateToProps = () => ({});
 
 let mapDispatchToProps = (dispatch) => {
-  cardUpdate: (card) => dispatch(cardUpdate(card)),
-  cardDelete: (card) => dispatch(cardDelete(card))
+  cardUpdate: (card) => dispatch(cardActionUpdate(card)),
+  cardDelete: (card) => dispatch(cardActionDelete(card))
 }
 
 export default CardItem;

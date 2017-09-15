@@ -9,6 +9,7 @@ class CardItem extends React.Component{
     return(
       <li className='card-item'>
         <p> {card.content} </p>
+        <button onClick={this.props.cardDelete}> Delete </button>
       </li>
     )
   }

@@ -8,11 +8,11 @@ import {
 
 class CardItem extends React.Component{
   render() {
-    let {card} = this.props;
+    let {card, cardDelete} = this.props;
     return(
       <li className='card-item'>
         <p> {card.content} </p>
-        <button onClick={this.props.cardDelete}> Delete </button>
+        <button onClick={ () => cardDelete(card)}> Delete </button>
       </li>
     )
   }
@@ -20,9 +20,9 @@ class CardItem extends React.Component{
 
 let mapStateToProps = () => ({});
 
-let mapDispatchToProps = (dispatch) => {
+let mapDispatchToProps = (dispatch) => ({
   cardUpdate: (card) => dispatch(cardActionUpdate(card)),
   cardDelete: (card) => dispatch(cardActionDelete(card))
-}
+})
 
 export default CardItem;

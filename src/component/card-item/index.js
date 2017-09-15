@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import {cardUpdate, cardDelete} from '../action/card-actions';
+import {cardUpdate, cardDelete} from '../../action/card-actions';
 
 class CardItem extends React.Component{
   render() {

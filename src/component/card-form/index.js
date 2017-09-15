@@ -3,7 +3,9 @@ import React from 'react';
 class CardForm extends React.Component {
   constructor(props){
     super(props)
-    this.state = props.card ? {...props.card} : {content: '', categoryID: props.categoryID}
+    this.state = props.card
+    ? {...props.card}
+    : {content: '', categoryID: props.categoryID}
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,6 +29,7 @@ class CardForm extends React.Component {
   }
 
   render(){
+    console.log('cardform state:', this.state)
     return (
       <form className="card-form" onSubmit={this.handleSubmit}>
         <input

@@ -5,7 +5,7 @@ import CategoryForm from '../category-form';
 import CardForm from '../card-form';
 import CardItem from '../card-item';
 
-import {cardCreate} from '../../action/card-actions';
+import {cardCreate as cardActionCreate} from '../../action/card-actions';
 
 import {
   categoryUpdate as categoryActionUpdate,
@@ -15,7 +15,7 @@ import {
 
 class CategoryItem extends React.Component{
   render(){
-    let {category, categoryUpdate, categoryDelete, cards} = this.props;
+    let {category, categoryUpdate, categoryDelete, cards, cardCreate} = this.props;
     return(
       <div className="category-item">
         <div className="content">
@@ -33,7 +33,7 @@ class CategoryItem extends React.Component{
           <CardForm
             categoryID={category.id}
             buttonText='create card'
-            onComplete={this.props.cardCreate}
+            onComplete={cardCreate}
             />
           <ul>
             {cards.map(card => <CardItem key={card.id} card={card} /> )}
@@ -53,7 +53,7 @@ let mapStateToProps = (state, props) => ({
 let mapDispatchToProps = dispatch => ({
   categoryUpdate: (category) => dispatch(categoryActionUpdate(category)),
   categoryDelete: (category) => dispatch(categoryActionDelete(category)),
-  cardCreate: (card) =>  dispatch(cardCreate(card))
+  cardCreate: (card) =>  dispatch(cardActionCreate(card))
 })
 
 

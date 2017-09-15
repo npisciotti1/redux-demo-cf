@@ -17,7 +17,7 @@ class CardItem extends React.Component{
         <button onClick={ () => cardDelete(card)}> Delete </button>
         <CardForm
           card={card}
-          buttonText="update card"
+          buttonText='update card'
           onComplete={cardUpdate}
          />
       </li>

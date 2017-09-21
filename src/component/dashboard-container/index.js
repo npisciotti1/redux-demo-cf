@@ -7,7 +7,7 @@ import CategoryItem from '../category-item'
 
 
 class DashboardContainer extends React.Component {
-  componentWillMount() {
+  componentDidMount() {
     this.props.categoryCreate({title: 'cool'});
     this.props.categoryCreate({title: 'whoah'})
     this.props.categoryCreate({title: 'sweet'})

@@ -59,14 +59,19 @@ describe('testing category reducer', () => {
   })
 
   test('CATEGORY_UPDATE should throw an error', () => {
+    //missing a timestamp property on payload.
     let action = {
       type: 'CATEGORY_UPDATE',
       payload: {
         title: 'im updated',
-        id: 2,
-        timestamp: 'some date'
+        id: 2
       }
     }
+
+    let state = {title: 'test', id: 1, timestamp: new Date()};
+
+    expect(() => categoryReducer(state, action)).toThrow('VALIDATION ERROR: category must have id, title and timestamp')
+
   })
 
   test('CATEGORY_DELETE should delete an item in state', () => {

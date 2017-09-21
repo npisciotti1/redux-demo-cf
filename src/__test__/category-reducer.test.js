@@ -39,28 +39,41 @@ describe('testing category reducer', () => {
   test('CATEGORY_UPDATE should update an item and return the updated state', () => {
     let action = {
       type: 'CATEGORY_UPDATE',
-      payload: {title: 'im updated', id: 2}
+      payload: {
+        title: 'im updated',
+        id: 2,
+        timestamp: 'some date'
+      }
     }
 
-    let state = [{category: 'test', id: 1}, {category: 'thing', id: 2}];
+    let state = [
+      {title: 'test', id: 1, timestamp: new Date()},
+      {title: 'thing', id: 2, timestamp: new Date()}
+    ];
 
     state = categoryReducer(state, action);
     expect(state[1]).toBe(action.payload);
 
     let updated = state[1];
-    expect(updated.category).toBe('im updated')
+    expect(updated.title).toBe('im updated')
   })
 
   test('CATEGORY_DELETE should delete an item in state', () => {
     let action = {
       type: 'CATEGORY_DELETE',
-      payload: {title: 'test', id: 1}
+      payload: {
+        title: 'test',
+        id: 1,
+        timestamp: new Date()
+      }
     }
-    let state = [{category: 'test', id: 1}, {category: 'thing', id: 2}];
+    let state = [
+      {title: 'test', id: 1, timestamp: new Date()},
+      {title: 'thing', id: 2, timestamp: new Date()}
+    ];
 
     state = categoryReducer(state, action)
     expect(state.length).toBe(1);
-    expect(state[0]).toEqual({category: 'thing', id: 2})
   })
 
   test('CATEGORY_RESET should return a resetted state --> []', () => {

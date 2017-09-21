@@ -9,7 +9,11 @@ describe('testing category reducer', () => {
   test('CATEGORY_CREATE should add an item and update the state', () => {
     let action = {
       type: 'CATEGORY_CREATE',
-      payload: 'test'
+      payload: {
+        id: '123',
+        title: 'test',
+        timestamp: new Date()
+      }
     }
     let state = categoryReducer(undefined, action)
     expect(state.length).toBe(1);
@@ -20,7 +24,11 @@ describe('testing category reducer', () => {
 
     let action2 = {
       type: 'CATEGORY_CREATE',
-      payload: 'thing'
+      payload: {
+        id: '321',
+        title: 'test2',
+        timestamp: new Date()
+      }
     }
 
     state = categoryReducer(state, action2);
@@ -31,7 +39,7 @@ describe('testing category reducer', () => {
   test('CATEGORY_UPDATE should update an item and return the updated state', () => {
     let action = {
       type: 'CATEGORY_UPDATE',
-      payload: {category: 'im updated', id: 2}
+      payload: {title: 'im updated', id: 2}
     }
 
     let state = [{category: 'test', id: 1}, {category: 'thing', id: 2}];
@@ -46,7 +54,7 @@ describe('testing category reducer', () => {
   test('CATEGORY_DELETE should delete an item in state', () => {
     let action = {
       type: 'CATEGORY_DELETE',
-      payload: {category: 'test', id: 1}
+      payload: {title: 'test', id: 1}
     }
     let state = [{category: 'test', id: 1}, {category: 'thing', id: 2}];
 

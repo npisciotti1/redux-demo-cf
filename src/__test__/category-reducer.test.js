@@ -58,6 +58,17 @@ describe('testing category reducer', () => {
     expect(updated.title).toBe('im updated')
   })
 
+  test('CATEGORY_UPDATE should throw an error', () => {
+    let action = {
+      type: 'CATEGORY_UPDATE',
+      payload: {
+        title: 'im updated',
+        id: 2,
+        timestamp: 'some date'
+      }
+    }
+  })
+
   test('CATEGORY_DELETE should delete an item in state', () => {
     let action = {
       type: 'CATEGORY_DELETE',

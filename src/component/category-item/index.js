@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import CategoryForm from '../category-form';
 import CardForm from '../card-form';
 import CardItem from '../card-item';
+import Dropzone from '../dropzone';
 
 import {cardCreate as cardActionCreate} from '../../action/card-actions';
 
@@ -35,9 +36,11 @@ class CategoryItem extends React.Component{
             buttonText='create card'
             onComplete={cardCreate}
             />
-          <ul>
-            {cards.map(card => <CardItem key={card.id} card={card} /> )}
-          </ul>
+          <Dropzone onComplete={this.handleDropzoneComplete}>
+            <ul>
+              {cards.map(card => <CardItem key={card.id} card={card} /> )}
+            </ul>
+          </Dropzone>
         </main>
       </div>
     )

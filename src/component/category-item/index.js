@@ -26,7 +26,7 @@ class CategoryItem extends React.Component{
 
     console.log('drop', data)
   }
-  
+
   render(){
     let {category, categoryUpdate, categoryDelete, cards, cardCreate} = this.props;
     return(
@@ -50,7 +50,9 @@ class CategoryItem extends React.Component{
             />
           <Dropzone onComplete={this.handleDropzoneComplete}>
             <ul>
-              {cards.map(card => <CardItem key={card.id} card={card} /> )}
+              {cards.map(card =>
+                <CardItem key={card.id} card={card} />
+              )}
             </ul>
           </Dropzone>
         </main>

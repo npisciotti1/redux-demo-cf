@@ -19,12 +19,14 @@ class CategoryItem extends React.Component{
     super(props)
     this.handleDropzoneComplete = this.handleDropzoneComplete.bind(this)
 
-    handleDropzoneComplete(err, data) {
-      if(err) return console.error(err);
-
-      console.log('drop')
-    }
   }
+
+  handleDropzoneComplete(err, data) {
+    if(err) return console.error(err);
+
+    console.log('drop', data)
+  }
+  
   render(){
     let {category, categoryUpdate, categoryDelete, cards, cardCreate} = this.props;
     return(

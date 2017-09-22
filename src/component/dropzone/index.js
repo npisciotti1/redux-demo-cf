@@ -12,6 +12,16 @@ class Dropzone extends React.Component {
     e.preventDefault()
   }
 
+  handleDrop(e) {
+    e.preventDefault()
+    try {
+      let item = JSON.parse(e.dataTransfer.getData('application/json'))
+      this.props.onComplete(null, item);
+    } catch(err) {
+      this.props.onComplete(err);
+    }
+  }
+
   render() {
     (
       <div

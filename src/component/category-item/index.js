@@ -31,31 +31,32 @@ class CategoryItem extends React.Component{
     let {category, categoryUpdate, categoryDelete, cards, cardCreate} = this.props;
     return(
       <div className="category-item">
-        <div className="content">
-          <h3>{category.title}</h3>
-          <button onClick={() => categoryDelete(category)}> delete </button>
-        </div>
-        <div className="editing">
-          <CategoryForm
-            category={category}
-            buttonText="update"
-            onComplete={categoryUpdate}
-            />
-        </div>
-        <main>
-          <CardForm
-            categoryID={category.id}
-            buttonText='create card'
-            onComplete={cardCreate}
-            />
-          <Dropzone onComplete={this.handleDropzoneComplete}>
-            <ul>
-              {cards.map(card =>
-                <CardItem key={card.id} card={card} />
-              )}
-            </ul>
-          </Dropzone>
-        </main>
+        <Dropzone onComplete={this.handleDropzoneComplete}>
+          <div className="content">
+            <h3>{category.title}</h3>
+            <button onClick={() => categoryDelete(category)}> delete </button>
+          </div>
+          <div className="editing">
+            <CategoryForm
+              category={category}
+              buttonText="update"
+              onComplete={categoryUpdate}
+              />
+          </div>
+          <main>
+            <CardForm
+              categoryID={category.id}
+              buttonText='create card'
+              onComplete={cardCreate}
+              />
+
+              <ul>
+                {cards.map(card =>
+                  <CardItem key={card.id} card={card} />
+                )}
+              </ul>
+          </main>
+        </Dropzone>
       </div>
     )
 

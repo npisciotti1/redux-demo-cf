@@ -29,7 +29,6 @@ class CardForm extends React.Component {
   }
 
   render(){
-    console.log('cardform state:', this.state)
     return (
       <form className="card-form" onSubmit={this.handleSubmit}>
         <input

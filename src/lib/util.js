@@ -7,6 +7,11 @@ export const renderIf = (test, component) => test ? component : undefined;
 //elements, if the classname has a truthy value, it gets returned. Example config:
 // { 'showChild': true, 'isHidden': false }
 //This would only return 'showChild'.
-export const classTogler = (config) => {
+export const classTogler = (config) =>
   Object.keys(config).filter(key => config[key]).join(' ')
-}
+
+export const log = (...args) =>
+  __DEBUG__ ? console.log(...args) : undefined;
+
+export const logError = (...args) =>
+  __DEBUG__ ? console.log(...args) : undefined;

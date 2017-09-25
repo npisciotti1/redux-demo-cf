@@ -25,7 +25,7 @@ class Dropzone extends React.Component {
   render() {
     return (
       <div
-        className='drop-zone'
+        className='dropzone'
         onDragOver={this.handleDragOver}
         onDrop={this.handleDrop}
         >

@@ -6,7 +6,11 @@ import CardForm from '../card-form';
 import CardItem from '../card-item';
 import Dropzone from '../dropzone';
 
-import {cardCreate as cardActionCreate} from '../../action/card-actions';
+import {
+  cardCreate as cardActionCreate,
+  cardInsert as cardActionInsert,
+  cardDelete as cardActionDelete
+} from '../../action/card-actions';
 
 import {
   categoryUpdate as categoryActionUpdate,
@@ -21,10 +25,14 @@ class CategoryItem extends React.Component{
 
   }
 
-  handleDropzoneComplete(err, data) {
+  handleDropzoneComplete(err, card) {
     if(err) return console.error(err);
 
-    console.log('drop', data)
+    this.props.cardDelete(card);
+    card.categoryID = this.props.category.id;
+    this.props.cardInsert(card);
+
+    console.log('drop', card)
   }
 
   render(){
@@ -71,7 +79,9 @@ let mapStateToProps = (state, props) => ({
 let mapDispatchToProps = dispatch => ({
   categoryUpdate: (category) => dispatch(categoryActionUpdate(category)),
   categoryDelete: (category) => dispatch(categoryActionDelete(category)),
-  cardCreate: (card) =>  dispatch(cardActionCreate(card))
+  cardCreate: (card) =>  dispatch(cardActionCreate(card)),
+  cardInsert: (card) => dispatch(cardActionInsert(card)),
+  cardDelete: (card) => dispatch(cardActionDelete(card))
 })
 
 

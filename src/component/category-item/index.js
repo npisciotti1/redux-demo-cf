@@ -31,8 +31,6 @@ class CategoryItem extends React.Component{
     this.props.cardDelete(card);
     card.categoryID = this.props.category.id;
     this.props.cardInsert(card);
-
-    console.log('drop', card)
   }
 
   render(){

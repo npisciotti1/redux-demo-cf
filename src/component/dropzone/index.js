@@ -26,10 +26,10 @@ class Dropzone extends React.Component {
     try {
       let item = JSON.parse(e.dataTransfer.getData('application/json'))
       this.props.onComplete(null, item);
-      this.setState({dropReady: false})
     } catch(err) {
       this.props.onComplete(err);
     }
+    this.setState({dropReady: false})
   }
 
   handleDragEnter(e) {

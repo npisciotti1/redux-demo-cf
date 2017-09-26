@@ -32,17 +32,17 @@ class Dropzone extends React.Component {
   }
 
   handleDragEnter(e) {
-    e.preventDefault()
+    this.setState({dropReady: true})
   }
 
   handleDragLeave(e) {
-    e.preventDefault()
+    this.setState({dropReady: false})
   }
 
   render() {
     let className = classToggler({
       'dropzone': true,
-      'drop-ready': this.state.dropReady;
+      'drop-ready': this.state.dropReady
     })
     return (
       <div
@@ -50,6 +50,7 @@ class Dropzone extends React.Component {
         onDragOver={this.handleDragOver}
         onDrop={this.handleDrop}
         onDragEnter={this.handleDragEnter}
+        onDragLeave={this.handleDragLeave}
         >
       {this.props.children}
       </div>

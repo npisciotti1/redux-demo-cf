@@ -6,7 +6,7 @@ export const renderIf = (test, component) => test ? component : undefined;
 //Nifty tool for adding classes to react components, accepts a config obj:
 // {'new-class': true, 'old-class': false}. This would remove 'old-class' and add
 //'new-class' to any element.
-export const classTogler = (config) =>
+export const classToggler = (config) =>
   Object.keys(config).filter(key => config[key]).join(' ')
 
 

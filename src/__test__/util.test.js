@@ -22,5 +22,16 @@ describe('testing util helpers', () => {
       expect(spy).toHaveBeenCalled();
       expect(spy).toHaveBeenCalledWith('cool', 'stuff')
     })
+
+    test('log should not work when __DEBUG__ is false', () => {
+      global.__DEBUG__ = fase;
+
+      //jest's spy method to keep track of whether console.log is called
+      const spy = jest.spyOn(console, 'log');
+
+      util.log('shouldnt', 'log')
+
+      expect(spy).notToHaveBeenCalled();
+    })
   })
 })

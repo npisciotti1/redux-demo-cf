@@ -1,19 +1,20 @@
 import React from 'react';
 
+import {classToggler} from '../../lib/util.js';
+
 class Dropzone extends React.Component {
   constructor(props){
     super(props)
 
     this.state = {
       dropReady: false
-
     }
 
     this.handleDragOver = this.handleDragOver.bind(this);
     this.handleDrop = this.handleDrop.bind(this);
+
     this.handleDragEnter = this.handleDragEnter.bind(this);
     this.handleDragLeave = this.handleDragLeave.bind(this);
-
   }
 
   handleDragOver(e){
@@ -39,9 +40,13 @@ class Dropzone extends React.Component {
   }
 
   render() {
+    let className = classToggler({
+      'dropzone': true,
+      'drop-ready': this.state.dropReady;
+    })
     return (
       <div
-        className='dropzone'
+        className={className}
         onDragOver={this.handleDragOver}
         onDrop={this.handleDrop}
         onDragEnter={this.handleDragEnter}

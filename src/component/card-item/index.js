@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
+import {renderIf} from '../../lib/util.js'
 import CardForm from '../card-form';
 import Draggable from '../draggable';
 
@@ -10,18 +11,32 @@ import {
 } from '../../action/card-actions';
 
 class CardItem extends React.Component{
+  constructor(props) {
+    super(props)
+    this.state = {
+      editing: false
+    }
+  }
   render() {
     let {card, cardDelete, cardUpdate} = this.props;
     return(
       <li className='card-item'>
         <Draggable dataTransferItem={card}>
-          <p> {card.content} </p>
-          <button onClick={ () => cardDelete(card)}> Delete </button>
-          <CardForm
-            card={card}
-            buttonText='update card'
-            onComplete={cardUpdate}
-           />
+
+          {renderIf(!this.state.editing,
+            <div>
+              <p> {card.content} </p>
+              <button onClick={ () => cardDelete(card)}> Delete </button>
+            </div>
+          )}
+
+          {renderIf(this.state.editing,
+            <CardForm
+              card={card}
+              buttonText='update card'
+              onComplete={cardUpdate}
+             />
+           )}
         </Draggable>
       </li>
     )

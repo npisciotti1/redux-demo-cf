@@ -16,7 +16,15 @@ class CardItem extends React.Component{
     this.state = {
       editing: false
     }
+
+    this.handleCardUpdate = this.handleCardUpdate.bind(this);
   }
+
+  handleCardUpdate(card) {
+    this.props.cardUpdate(card);
+    this.setState({editing: false})
+  }
+
   render() {
     let {card, cardDelete, cardUpdate} = this.props;
     return(
@@ -24,7 +32,7 @@ class CardItem extends React.Component{
         <Draggable dataTransferItem={card}>
 
           {renderIf(!this.state.editing,
-            <div>
+            <div onDoubleClick={() => this.setState({editing: true})}>
               <p> {card.content} </p>
               <button onClick={ () => cardDelete(card)}> Delete </button>
             </div>
@@ -34,7 +42,7 @@ class CardItem extends React.Component{
             <CardForm
               card={card}
               buttonText='update card'
-              onComplete={cardUpdate}
+              onComplete={handleCardUpdate}
              />
            )}
         </Draggable>

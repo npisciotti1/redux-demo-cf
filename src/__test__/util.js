@@ -1,4 +1,4 @@
-import {classToggler, renderIf, log, logError} from '../lib/util.js'
+import * as util from '../lib/util.js'
 
 describe('testing util helpers', () => {
   describe('testing loggers', () => {
@@ -17,7 +17,9 @@ describe('testing util helpers', () => {
       //jest's spy method to keep track of whether console.log is called
       const spy = jest.spyOn(console, 'log');
 
-      
+      util.log('cool')
+
+      expect(spy).toHaveBeenCalled();
     })
   })
 })

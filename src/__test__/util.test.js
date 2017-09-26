@@ -21,6 +21,7 @@ describe('testing util helpers', () => {
 
       expect(spy).toHaveBeenCalled();
       expect(spy).toHaveBeenCalledWith('cool', 'stuff')
+      spy.mockClear()
     })
 
     test('log should not work when __DEBUG__ is false', () => {
@@ -31,7 +32,7 @@ describe('testing util helpers', () => {
 
       util.log('shouldnt', 'log')
 
-      expect(spy).notToHaveBeenCalled();
+      expect(spy).not.toHaveBeenCalled();
     })
   })
 })

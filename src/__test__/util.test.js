@@ -24,7 +24,7 @@ describe('testing util helpers', () => {
     })
 
     test('log should not work when __DEBUG__ is false', () => {
-      global.__DEBUG__ = fase;
+      global.__DEBUG__ = false;
 
       //jest's spy method to keep track of whether console.log is called
       const spy = jest.spyOn(console, 'log');

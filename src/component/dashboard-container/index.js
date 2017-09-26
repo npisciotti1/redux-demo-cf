@@ -5,7 +5,7 @@ import {categoryCreate as categoryActionCreate} from '../../action/category-acti
 import CategoryForm from '../category-form'
 import CategoryItem from '../category-item'
 
-import './_dashboard-container.scss'
+// import './_dashboard-container.scss'
 
 
 class DashboardContainer extends React.Component {

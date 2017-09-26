@@ -10,6 +10,10 @@ export const renderIf = (test, component) => test ? component : undefined;
 export const classTogler = (config) =>
   Object.keys(config).filter(key => config[key]).join(' ')
 
+
+//These last two are for cleanly removing logs from our app when shipping
+//to production. I.E. '__DEBUG__' will only be true if
+// 'process.env.NODE_ENV' !== 'production'
 export const log = (...args) =>
   __DEBUG__ ? console.log(...args) : undefined;
 

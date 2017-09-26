@@ -17,9 +17,10 @@ describe('testing util helpers', () => {
       //jest's spy method to keep track of whether console.log is called
       const spy = jest.spyOn(console, 'log');
 
-      util.log('cool')
+      util.log('cool', 'stuff')
 
       expect(spy).toHaveBeenCalled();
+      expect(spy).toHaveBeenCalledWith('cool', 'stuff')
     })
   })
 })

@@ -39,12 +39,15 @@ class CardItem extends React.Component{
           )}
 
           {renderIf(this.state.editing,
-            <CardForm
-              card={card}
-              buttonText='update card'
-              onComplete={handleCardUpdate}
-             />
-           )}
+            <div>
+              <CardForm
+                card={card}
+                buttonText='update card'
+                onComplete={this.handleCardUpdate}
+               />
+              <button onClick={() => this.setState({editing: false})}> cancel </button>
+           </div>
+         )}
         </Draggable>
       </li>
     )

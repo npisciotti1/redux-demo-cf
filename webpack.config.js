@@ -1,12 +1,26 @@
 'use strict'
 
 require('dotenv').config({path: `${__dirname}/.env`});
+
+//simple boolean to check if production.
 const production = process.env.NODE_ENV === 'production';
 
+//These are two native plugins to webpack, DefinePlugin allows us to create
+//global variables, EnvironmentPlugin is similar but allows us to format them
+//like: process.env.MY_VAR
 const {DefinePlugin, EnvironmentPlugin} = require('webpack');
+
+//creates an html file, typically our template
 const HTMLPlugin = require('html-webpack-plugin');
+
+//For production, this will 'overwrite' any built bundles that exist
+//upon building a new bundle, unfortunately this doesnt happen natively.
 const CleanPlugin = require('clean-webpack-plugin');
+
+//For production, obfuscates code in build
 const UglifyPlugin = require('uglifyjs-webpack-plugin');
+
+//For extracting and bundling our css
 const ExtractPlugin = require('extract-text-webpack-plugin');
 
 let plugins = [
@@ -18,6 +32,7 @@ let plugins = [
   }),
 ];
 
+//A check to see if we're shipping to production, adds two plugins to the plugins array
 if (production)
   plugins = plugins.concat([ new CleanPlugin(), new UglifyPlugin() ]);
 

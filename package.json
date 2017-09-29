@@ -6,7 +6,7 @@
   "author": "Nikko Pisciotti <nikko@bluelacesmusic.com>",
   "jest": {
     "moduleNameMapper": {
-      "\\.scss$": "<rootDir>/src/__test__/lib/webpack-asset-faker.js"
+      "\\.(scss|mp3|mov|mp4|jpg|svg|png|gif)$": "<rootDir>/src/__test__/lib/webpack-asset-faker.js"
     },
     "globals": {
       "__DEBUG__": false,

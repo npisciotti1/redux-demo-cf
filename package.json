@@ -5,6 +5,9 @@
   "repository": "https://github.com/npisciotti1/redux-demo-cf.git",
   "author": "Nikko Pisciotti <nikko@bluelacesmusic.com>",
   "jest": {
+    "moduleNameMapper": {
+      "\\.scss$": "<rootDir>/src/__test__/lib/webpack-asset-faker.js"
+    },
     "globals": {
       "__DEBUG__": false,
       "process.env": {
